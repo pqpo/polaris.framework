@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<style name="title" bgcolor="white" align="center" valign="center"
+		border="0" outborder="0">
+		<font size="22" name="华文彩云" bold="true" italic="false"
+			color="black" underline="false" />
+	</style>
+	
+	<style name="title2" bgcolor="white" align="center" valign="center"
+		border="0" outborder="0">
+		<font size="10" name="黑体" bold="false" italic="false"
+			color="black" underline="false" />
+	</style>
+
+	<style name="head" bgcolor="(251,226,162)" align="center" valign="center"
+		border="1" outborder="4">
+		<font size="12" bold="false" name="华文彩云"
+			italic="false" color="white" underline="false" />
+	</style>
+	
+	<style name="content" bgcolor="white" align="left" valign="center"
+		border="1" outborder="4">
+		<font size="10" bold="false" name="宋体"
+			italic="false" color="black" underline="false" />
+	</style>
+</root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx.xsd
+                     http://www.springframework.org/schema/context   
+                     http://www.springframework.org/schema/context/spring-context.xsd
+                     http://www.springframework.org/schema/util
+                     http://www.springframework.org/schema/util/spring-util.xsd
+                     http://www.springframework.org/schema/aop  
+					 http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean class="org.polaris.framework.common.server.RestServletContextHandlerFactory">
+		<property name="contextPath" value="/api" />
+		<property name="urlPattern" value="/*" />
+		<property name="applicationContextConfigLocation" value="classpath*:META-INF/servlet/*-applicationcontext.xml" />
+		<property name="servletContextConfigLocation" value="classpath*:META-INF/servlet/*-servlet.xml" />
+	</bean>
+
+	<bean class="org.polaris.framework.common.server.ResourceHandlerFactory">
+		<property name="resourceBase" value="webcontent" />
+	</bean>
+
+	<bean id="server" class="org.polaris.framework.common.server.MyServer">
+		<constructor-arg>
+			<bean id="threadPool" class="org.eclipse.jetty.util.thread.QueuedThreadPool">
+				<property name="minThreads" value="10" />
+				<property name="maxThreads" value="500" />
+			</bean>
+		</constructor-arg>
+		<property name="connectors">
+			<list>
+				<bean id="connector" class="org.eclipse.jetty.server.ServerConnector">
+					<constructor-arg ref="server" />
+					<property name="port" value="6001" />
+				</bean>
+			</list>
+		</property>
+		<property name="handler" ref="handlerCollection" />
+	</bean>
+
+
+</beans>

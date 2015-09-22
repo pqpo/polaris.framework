@@ -1,0 +1,45 @@
+.resultDiv {
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-top: dashed thin #888;
+}
+
+.resultDiv table thead {
+	background: #ddd;
+}
+
+.resultDiv table tr {
+	height: 30px;
+}
+
+.resultDiv table td {
+	width: 180px;
+}
+
+.unknown {
+	background: #ff0000;
+}
+
+.normal {
+	background: #00ff00;
+}
+
+.abnormal {
+	background: #0000ff;
+}
+
+.guess{
+	background: #ffcc00;
+}
+
+#sceneDictionaryDiv td a {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+a {
+	font-size: 10px;
+	cursor: pointer;
+	font-weight: normal;
+	color: #ffcc00;
+}
